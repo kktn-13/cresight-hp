@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cresight Japan | 世界のイノベーションを日本へ、日本の魅力を世界へ</title>
+<meta name="description" content="Cresight Japan - 海外企業の日本進出支援、日本IP・食・文化の海外展開支援、TikTok Shopサポート。">
+<meta property="og:title" content="Cresight Japan">
+<meta property="og:description" content="世界のイノベーションを日本へ、日本の魅力を世界へ。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--white:#FFF;--off-white:#F8F9FB;--light-gray:#EEF0F4;--mid-gray:#94A3B8;--text:#1E293B;--text-sub:#64748B;--brand-purple:#4A3048;--brand-blue:#6B8A99;--accent:#2E5A88;--accent-light:#E8F0F8;--font-display:'Cormorant Garamond','Georgia',serif;--font-body:'DM Sans','Noto Sans JP',sans-serif;--space-xs:.5rem;--space-sm:1rem;--space-md:2rem;--space-lg:4rem;--space-xl:6rem;--max-width:1200px;--header-height:72px}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 var(--space-md)}
+.header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid rgba(0,0,0,.04);transition:box-shadow .3s}
+.header.scrolled{box-shadow:0 1px 20px rgba(0,0,0,.06)}
+.header-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--space-md);height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.logo-symbol{width:36px;height:36px}
+.logo-symbol svg{width:100%;height:100%}
+.logo-text{font-family:var(--font-display);font-size:1.65rem;font-weight:600;letter-spacing:-.02em;color:var(--text)}
+.nav{display:flex;align-items:center;gap:2rem}
+.nav a{text-decoration:none;color:var(--text-sub);font-size:.85rem;font-weight:500;letter-spacing:.04em;transition:color .2s}
+.nav a:hover{color:var(--text)}
+.lang-toggle{background:var(--off-white);border:1px solid var(--light-gray);border-radius:6px;padding:5px 12px;font-size:.78rem;font-weight:500;cursor:pointer;color:var(--text-sub);font-family:var(--font-body);transition:all .2s;letter-spacing:.05em}
+.lang-toggle:hover{background:var(--light-gray);color:var(--text)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative;z-index:1001}
+.menu-btn span{display:block;width:100%;height:2px;background:var(--text);position:absolute;left:0;transition:all .3s}
+.menu-btn span:nth-child(1){top:0}.menu-btn span:nth-child(2){top:9px}.menu-btn span:nth-child(3){top:18px}
+.menu-btn.active span:nth-child(1){top:9px;transform:rotate(45deg)}.menu-btn.active span:nth-child(2){opacity:0}.menu-btn.active span:nth-child(3){top:9px;transform:rotate(-45deg)}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:var(--header-height)}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg::before{content:'';position:absolute;top:-20%;right:-10%;width:800px;height:800px;background:radial-gradient(ellipse,rgba(107,138,153,.08) 0%,transparent 70%);border-radius:50%}
+.hero-bg::after{content:'';position:absolute;bottom:-10%;left:-5%;width:600px;height:600px;background:radial-gradient(ellipse,rgba(74,48,72,.05) 0%,transparent 70%);border-radius:50%}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.02) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 70% 60% at 60% 40%,black 20%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 60% 40%,black 20%,transparent 80%)}
+.hero-content{position:relative;z-index:1;max-width:var(--max-width);margin:0 auto;padding:0 var(--space-md);width:100%}
+.hero-label{font-size:.78rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--brand-blue);margin-bottom:var(--space-md);opacity:0;animation:fadeUp .8s .2s forwards}
+.hero-title{font-family:var(--font-display);font-size:clamp(1.8rem,4.2vw,3.2rem);font-weight:500;line-height:1.25;letter-spacing:-.02em;color:var(--text);margin-bottom:var(--space-md);max-width:900px;opacity:0;animation:fadeUp .8s .4s forwards}
+.hero-title em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:1.05rem;color:var(--text-sub);max-width:520px;line-height:1.8;margin-bottom:var(--space-lg);font-weight:300;opacity:0;animation:fadeUp .8s .6s forwards}
+.hero-cta{display:flex;gap:var(--space-sm);flex-wrap:wrap;opacity:0;animation:fadeUp .8s .8s forwards}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:8px;font-size:.88rem;font-weight:500;text-decoration:none;transition:all .25s;font-family:var(--font-body);letter-spacing:.02em;cursor:pointer;border:none}
+.btn-primary{background:var(--text);color:var(--white)}.btn-primary:hover{background:#0f172a;transform:translateY(-1px);box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--light-gray)}.btn-secondary:hover{border-color:var(--mid-gray);background:var(--off-white)}
+.btn-arrow{transition:transform .25s}.btn:hover .btn-arrow{transform:translateX(3px)}
+.scroll-indicator{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s 1.2s forwards}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--mid-gray),transparent);animation:scrollPulse 2s infinite}
+@keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:1}}
+.section{padding:var(--space-xl) 0}
+.section-label{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-blue);margin-bottom:var(--space-xs)}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:500;line-height:1.2;letter-spacing:-.02em;margin-bottom:var(--space-sm)}
+.section-desc{color:var(--text-sub);font-size:1rem;max-width:560px;line-height:1.8;font-weight:300}
+.service-item{padding:var(--space-lg) 0;border-bottom:1px solid var(--light-gray);align-items:start}
+.service-item:first-child{border-top:1px solid var(--light-gray)}
+.service-header{display:flex;align-items:baseline;gap:var(--space-md);margin-bottom:var(--space-sm)}
+.service-num{font-family:var(--font-display);font-size:1.2rem;font-weight:400;color:var(--mid-gray);line-height:1;letter-spacing:-.02em}
+.service-title-text{font-family:var(--font-display);font-size:1.8rem;font-weight:600;line-height:1.3}
+.service-title-sub{font-size:.78rem;color:var(--brand-blue);font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:var(--space-sm)}
+.service-body{color:var(--text-sub);font-size:.92rem;line-height:1.9;font-weight:300;max-width:720px}
+.service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm);margin-top:var(--space-md)}
+.service-detail-card{padding:var(--space-sm) var(--space-md);border-left:3px solid var(--brand-blue);background:var(--off-white);border-radius:0 8px 8px 0}
+.service-detail-card.purple{border-left-color:var(--brand-purple)}
+.detail-label{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-blue);margin-bottom:4px}
+.service-detail-card.purple .detail-label{color:var(--brand-purple)}
+.detail-title{font-family:var(--font-display);font-size:1.05rem;font-weight:600;margin-bottom:4px}
+.detail-desc{font-size:.82rem;color:var(--text-sub);line-height:1.7;font-weight:300}
+.service-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--space-md)}
+.service-tag{padding:5px 14px;background:var(--accent-light);color:var(--accent);font-size:.76rem;font-weight:500;border-radius:100px;letter-spacing:.02em}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl);margin-top:var(--space-lg);align-items:start}
+.about-text{font-size:.95rem;color:var(--text-sub);line-height:1.9;font-weight:300}
+.about-text p+p{margin-top:var(--space-sm)}
+.company-table{width:100%;border-collapse:collapse;margin-top:var(--space-md)}
+.company-table tr{border-bottom:1px solid var(--light-gray)}
+.company-table th{text-align:left;padding:12px 0;font-size:.82rem;font-weight:500;color:var(--text-sub);letter-spacing:.04em;width:110px;vertical-align:top}
+.company-table td{padding:12px 0;font-size:.88rem;color:var(--text);line-height:1.6}
+.founder-card{display:flex;gap:var(--space-md);align-items:start}
+.founder-photo{width:160px;height:200px;object-fit:cover;object-position:center top;border-radius:12px;flex-shrink:0}
+.founder-role{font-size:.78rem;color:var(--brand-blue);font-weight:500;letter-spacing:.06em;margin-bottom:2px}
+.founder-name{font-family:var(--font-display);font-size:1.5rem;font-weight:600;margin-bottom:var(--space-sm)}
+.founder-bio{font-size:.88rem;color:var(--text-sub);line-height:1.8;font-weight:300}
+.founder-bio p+p{margin-top:.6rem}
+.founder-awards{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--space-sm)}
+.award-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:var(--off-white);border:1px solid var(--light-gray);border-radius:100px;font-size:.76rem;color:var(--text-sub);font-weight:500}
+.award-badge svg{width:13px;height:13px;color:var(--brand-blue)}
+.news-list{margin-top:var(--space-lg)}
+.news-item{display:grid;grid-template-columns:110px 1fr;gap:var(--space-md);padding:var(--space-sm) 0;border-bottom:1px solid var(--light-gray);text-decoration:none;color:inherit;transition:opacity .2s}
+.news-item:first-child{border-top:1px solid var(--light-gray)}
+.news-item:hover{opacity:.7}
+.news-date{font-size:.82rem;color:var(--text-sub);padding-top:2px}
+.news-tag{display:inline-block;padding:2px 10px;background:var(--accent-light);color:var(--accent);font-size:.7rem;font-weight:500;border-radius:4px;margin-bottom:4px;letter-spacing:.04em}
+.news-title-text{font-size:.92rem;font-weight:500;line-height:1.5}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl);margin-top:var(--space-lg)}
+.contact-info h3{font-family:var(--font-display);font-size:1.3rem;font-weight:600;margin-bottom:var(--space-md)}
+.contact-detail{display:flex;align-items:flex-start;gap:12px;margin-bottom:var(--space-sm)}
+.contact-detail svg{width:18px;height:18px;color:var(--brand-blue);flex-shrink:0;margin-top:2px}
+.contact-detail span{font-size:.88rem;color:var(--text-sub);line-height:1.6}
+.recruit-note{padding:var(--space-sm);background:var(--white);border:1px solid var(--light-gray);border-radius:8px;margin-top:var(--space-sm)}
+.recruit-note p{font-size:.85rem;color:var(--text-sub);line-height:1.7}
+.recruit-note strong{color:var(--text);font-weight:500}
+.contact-form{display:flex;flex-direction:column;gap:var(--space-sm)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm)}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:.78rem;font-weight:500;color:var(--text-sub);letter-spacing:.04em}
+.form-group input,.form-group select,.form-group textarea{padding:12px 16px;border:1px solid var(--light-gray);border-radius:8px;font-size:.9rem;font-family:var(--font-body);color:var(--text);background:var(--white);transition:border-color .2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent)}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-status{padding:12px 16px;border-radius:8px;font-size:.88rem;display:none}
+.form-status.success{display:block;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0}
+.form-status.error{display:block;background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+.footer{background:var(--text);color:rgba(255,255,255,.5);padding:var(--space-lg) 0 var(--space-md)}
+.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--space-lg);margin-bottom:var(--space-lg)}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:var(--space-sm)}
+.footer-brand .logo-text{color:var(--white);font-size:1.4rem}
+.footer-desc{font-size:.85rem;line-height:1.7;max-width:320px}
+.footer-heading{font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:var(--space-sm)}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{text-decoration:none;color:rgba(255,255,255,.5);font-size:.85rem;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{padding-top:var(--space-md);border-top:1px solid rgba(255,255,255,.06);font-size:.78rem;display:flex;justify-content:space-between;align-items:center}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:1024px){.about-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr;gap:var(--space-md)}.service-detail-grid{grid-template-columns:1fr}}
+@media(max-width:768px){:root{--space-lg:3rem;--space-xl:4rem}.nav{display:none}.nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--white);justify-content:center;align-items:center;gap:2rem;z-index:999}.nav.open a{font-size:1.2rem}.menu-btn{display:block}.hero-title{font-size:clamp(2.2rem,8vw,3.5rem)}.service-num{font-size:2.8rem}.founder-card{flex-direction:column;align-items:center;text-align:center}.founder-photo{width:140px;height:175px}.founder-awards{justify-content:center}.form-row{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}.news-item{grid-template-columns:1fr;gap:4px}.scroll-indicator{display:none}}
+</style>
+</head>
+<body>
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-symbol"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2C18 2 18 14 18 18C14 18 2 18 2 18C2 18 2 12 8 8C12 4 18 2 18 2Z" fill="#6B8A99"/><path d="M22 2C22 2 22 14 22 18C26 18 38 18 38 18C38 18 38 12 32 8C28 4 22 2 22 2Z" fill="#4A3048"/><path d="M18 38C18 38 18 26 18 22C14 22 2 22 2 22C2 22 2 28 8 32C12 36 18 38 18 38Z" fill="#4A3048"/><path d="M22 38C22 38 22 26 22 22C26 22 38 22 38 22C38 22 38 28 32 32C28 36 22 38 22 38Z" fill="#6B8A99"/></svg></div>
+      <span class="logo-text">cresight</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#services" data-ja="サービス" data-en="Services">サービス</a>
+      <a href="#about" data-ja="会社概要" data-en="About">会社概要</a>
+      <a href="#news" data-ja="ニュース" data-en="News">ニュース</a>
+      <a href="#contact" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a>
+      <button class="lang-toggle" id="langToggle" onclick="toggleLang()">EN</button>
+    </nav>
+    <button class="menu-btn" id="menuBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-bg"><div class="hero-grid"></div></div>
+  <div class="hero-content">
+    <p class="hero-label">Cresight Japan</p>
+    <h1 class="hero-title"><span data-ja="世界の<em>イノベーション</em>を日本へ、<br>日本の<em>魅力</em>を世界へ。" data-en="Bringing Global <em>Innovation</em> to Japan.<br>Taking Japan's <em>Best</em> to the World.">世界の<em>イノベーション</em>を日本へ、<br>日本の<em>魅力</em>を世界へ。</span></h1>
+    <p class="hero-sub" data-ja="海外企業の日本進出、日本IP・食・文化の海外展開、TikTok Shopの戦略支援。国境を越えたビジネスの成長を包括的にサポートします。" data-en="Japan market entry for global companies, international expansion of Japanese IP, food, and culture, and TikTok Shop strategy. We comprehensively support business growth across borders.">海外企業の日本進出、日本IP・食・文化の海外展開、TikTok Shopの戦略支援。国境を越えたビジネスの成長を包括的にサポートします。</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary" data-ja="お問い合わせ" data-en="Get in Touch">お問い合わせ<span class="btn-arrow">→</span></a>
+      <a href="#services" class="btn btn-secondary" data-ja="サービスを見る" data-en="Our Services">サービスを見る</a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><div class="scroll-line"></div></div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Services</p>
+      <h2 class="section-title" data-ja="事業内容" data-en="What We Do">事業内容</h2>
+      <p class="section-desc" data-ja="3つの領域で、国境を越えたビジネスの成長を支援します。" data-en="We support business growth across borders in three core areas.">3つの領域で、国境を越えたビジネスの成長を支援します。</p>
+    </div>
+    <div style="margin-top:var(--space-lg);">
+
+      <div class="service-item reveal">
+        <div class="service-header"><span class="service-num">01</span><h3 class="service-title-text" data-ja="海外企業の日本進出支援" data-en="Japan Market Entry Support">海外企業の日本進出支援</h3></div>
+        <p class="service-title-sub">Temporary Country Manager</p>
+        <div class="service-body"><p data-ja="海外企業の日本進出を、Temporary Country Managerとして包括的にサポート。単なる販売代理ではなく、経営的視点からSalesとMarketingを推進し、日本市場での成長基盤を構築します。" data-en="We serve as your Temporary Country Manager for Japan market entry. Beyond simple sales representation, we drive Sales and Marketing from a strategic management perspective, building your growth foundation in Japan.">海外企業の日本進出を、Temporary Country Managerとして包括的にサポート。単なる販売代理ではなく、経営的視点からSalesとMarketingを推進し、日本市場での成長基盤を構築します。</p></div>
+        <div class="service-detail-grid">
+          <div class="service-detail-card"><div class="detail-label">Sales</div><div class="detail-title" data-ja="営業・事業開発" data-en="Sales & Business Development">営業・事業開発</div><div class="detail-desc" data-ja="ターゲット業界のリサーチから営業活動、契約交渉までを一貫してサポートします。" data-en="End-to-end support from target industry research to sales execution and contract negotiation.">ターゲット業界のリサーチから営業活動、契約交渉までを一貫してサポートします。</div></div>
+          <div class="service-detail-card purple"><div class="detail-label">Marketing</div><div class="detail-title" data-ja="マーケティング戦略" data-en="Marketing Strategy">マーケティング戦略</div><div class="detail-desc" data-ja="ブランドのローカライゼーションから日本市場向けマーケティング戦略の策定・実行まで。" data-en="From brand localization to marketing strategy development and execution for the Japanese market.">ブランドのローカライゼーションから日本市場向けマーケティング戦略の策定・実行まで。</div></div>
+        </div>
+        <div class="service-tags"><span class="service-tag" data-ja="パートナー開拓" data-en="Partner Development">パートナー開拓</span><span class="service-tag" data-ja="ローカライゼーション" data-en="Localization">ローカライゼーション</span><span class="service-tag" data-ja="体制構築" data-en="Operations Setup">体制構築</span></div>
+      </div>
+
+      <div class="service-item reveal">
+        <div class="service-header"><span class="service-num">02</span><h3 class="service-title-text" data-ja="日本IP・食・文化の海外展開支援" data-en="Global Expansion of Japanese IP, Food & Culture">日本IP・食・文化の海外展開支援</h3></div>
+        <p class="service-title-sub">Global Expansion Support</p>
+        <div class="service-body"><p data-ja="日本の優れたプロダクトや文化を世界へ届けます。現在は人間国宝の工芸作家の海外進出支援を手がけ、日本のクラフトマンシップを国際市場へ展開しています。" data-en="We bring Japan's finest products and cultural craftsmanship to the world. Currently leading the international expansion of a Living National Treasure artisan.">日本の優れたプロダクトや文化を世界へ届けます。現在は人間国宝の工芸作家の海外進出支援を手がけ、日本のクラフトマンシップを国際市場へ展開しています。</p></div>
+        <div class="service-detail-grid">
+          <div class="service-detail-card"><div class="detail-label">Research</div><div class="detail-title" data-ja="市場リサーチ・戦略" data-en="Market Research & Strategy">市場リサーチ・戦略</div><div class="detail-desc" data-ja="海外市場のリサーチ、ターゲット選定、最適な参入戦略を策定します。" data-en="Overseas market research, target selection, and optimal entry strategy development.">海外市場のリサーチ、ターゲット選定、最適な参入戦略を策定します。</div></div>
+          <div class="service-detail-card purple"><div class="detail-label">Branding</div><div class="detail-title" data-ja="ブランディング・販路" data-en="Branding & Channels">ブランディング・販路</div><div class="detail-desc" data-ja="現地パートナーとの接続、チャネル構築、プロモーション支援を行います。" data-en="Local partner connections, channel development, and promotional support.">現地パートナーとの接続、チャネル構築、プロモーション支援を行います。</div></div>
+        </div>
+        <div class="service-tags"><span class="service-tag" data-ja="海外市場リサーチ" data-en="Market Research">海外市場リサーチ</span><span class="service-tag" data-ja="チャネル構築" data-en="Channel Development">チャネル構築</span><span class="service-tag" data-ja="ブランディング" data-en="Branding">ブランディング</span></div>
+      </div>
+
+      <div class="service-item reveal">
+        <div class="service-header"><span class="service-num">03</span><h3 class="service-title-text" data-ja="TikTok Shopサポート" data-en="TikTok Shop Support">TikTok Shopサポート</h3></div>
+        <p class="service-title-sub" data-ja="立ち上げから売上最大化まで" data-en="From Setup to Revenue Maximization">立ち上げから売上最大化まで</p>
+        <div class="service-body"><p data-ja="TikTok Shopの日本ローンチに携わった経験を活かし、出店から運用まで一気通貫で伴走。戦略支援とオペレーションの危機管理、「攻め」と「守り」の両軸でTikTok Shopの成長を支えます。" data-en="Leveraging firsthand experience from the TikTok Shop Japan launch, we provide end-to-end support from store setup to daily operations, driving growth through both strategic offense and operational defense.">TikTok Shopの日本ローンチに携わった経験を活かし、出店から運用まで一気通貫で伴走。戦略支援とオペレーションの危機管理、「攻め」と「守り」の両軸でTikTok Shopの成長を支えます。</p></div>
+        <div class="service-detail-grid">
+          <div class="service-detail-card"><div class="detail-label" data-ja="攻めの軸" data-en="Offense">攻めの軸</div><div class="detail-title" data-ja="戦略支援" data-en="Strategic Support">戦略支援</div><div class="detail-desc" data-ja="出店戦略、コンテンツ戦略、広告運用（GMV Max活用）。売上を最大化する施策を設計・実行します。" data-en="Store strategy, content planning, and ad operations via GMV Max to maximize revenue.">出店戦略、コンテンツ戦略、広告運用（GMV Max活用）。売上を最大化する施策を設計・実行します。</div></div>
+          <div class="service-detail-card purple"><div class="detail-label" data-ja="守りの軸" data-en="Defense">守りの軸</div><div class="detail-title" data-ja="オペレーションの危機管理" data-en="Operational Risk Management">オペレーションの危機管理</div><div class="detail-desc" data-ja="アカウント停止リスク対策、プラットフォームポリシー遵守、運用の安定化を支援します。" data-en="Account suspension risk mitigation, platform policy compliance, and operational stabilization.">アカウント停止リスク対策、プラットフォームポリシー遵守、運用の安定化を支援します。</div></div>
+        </div>
+        <div class="service-tags"><span class="service-tag" data-ja="出店支援" data-en="Store Setup">出店支援</span><span class="service-tag" data-ja="コンテンツ戦略" data-en="Content Strategy">コンテンツ戦略</span><span class="service-tag" data-ja="広告運用" data-en="Ad Operations">広告運用</span><span class="service-tag" data-ja="リスク管理" data-en="Risk Management">リスク管理</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about" style="background:var(--off-white);">
+  <div class="container">
+    <div class="reveal"><p class="section-label">About Us</p><h2 class="section-title" data-ja="会社概要" data-en="About Cresight Japan">会社概要</h2></div>
+    <div class="about-grid reveal">
+      <div>
+        <div class="about-text">
+          <p data-ja="Cresight Japanは、「世界のイノベーションを日本へ、日本の魅力を世界へ」という理念のもと設立されました。国境を越えたビジネスの成長を支える架け橋として、企業の挑戦に伴走します。" data-en="Cresight Japan was founded on the mission of bringing global innovation to Japan and Japanese excellence to the world. We serve as a bridge that supports businesses in their journey of international growth.">Cresight Japanは、「世界のイノベーションを日本へ、日本の魅力を世界へ」という理念のもと設立されました。国境を越えたビジネスの成長を支える架け橋として、企業の挑戦に伴走します。</p>
+          <p data-ja="海外企業には日本での成長基盤を、日本企業には世界への展開手段を提供し、双方向の価値創造を実現します。" data-en="We provide global companies with a growth foundation in Japan and Japanese businesses with the means to expand worldwide, creating value in both directions.">海外企業には日本での成長基盤を、日本企業には世界への展開手段を提供し、双方向の価値創造を実現します。</p>
+        </div>
+        <table class="company-table">
+          <tr><th data-ja="会社名" data-en="Company">会社名</th><td>Cresight Japan</td></tr>
+          <tr><th data-ja="代表" data-en="Founder">代表</th><td data-ja="城間 琴音" data-en="Kotone Shiroma">城間 琴音</td></tr>
+          <tr><th data-ja="設立" data-en="Founded">設立</th><td data-ja="2026年2月" data-en="February 2026">2026年2月</td></tr>
+          <tr><th data-ja="所在地" data-en="Address">所在地</th><td data-ja="〒150-0041 東京都渋谷区神南1-11-4 FPGリンクス神南 5F" data-en="FPG Links Jinnan 5F, 1-11-4 Jinnan, Shibuya-ku, Tokyo 150-0041">〒150-0041 東京都渋谷区神南1-11-4 FPGリンクス神南 5F</td></tr>
+          <tr><th data-ja="事業内容" data-en="Services">事業内容</th><td data-ja="海外企業日本進出支援 / 日本IP・食・文化の海外展開支援 / TikTok Shopサポート" data-en="Japan Market Entry / Global Expansion of Japanese IP, Food & Culture / TikTok Shop Support">海外企業日本進出支援 / 日本IP・食・文化の海外展開支援 / TikTok Shopサポート</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="founder-card">
+          <img src="images/founder.jpg" alt="城間 琴音" class="founder-photo">
+          <div>
+            <p class="founder-role">Founder & CEO</p>
+            <h3 class="founder-name" data-ja="城間 琴音" data-en="Kotone Shiroma">城間 琴音</h3>
+            <div class="founder-bio">
+              <p data-ja="2023年 慶應義塾大学 理工学部 管理工学科 入学。ノースカロライナ大学チャペルヒル校（UNC）への交換留学を経て、オックスフォード大学 Saïd Business Schoolの起業家育成プログラム J-STAR Xに選出。" data-en="Entered Keio University, Faculty of Science and Technology, Department of Administration Engineering in 2023. After an exchange program at UNC Chapel Hill, selected for J-STAR X at Oxford University's Saïd Business School.">2023年 慶應義塾大学 理工学部 管理工学科 入学。ノースカロライナ大学チャペルヒル校（UNC）への交換留学を経て、オックスフォード大学 Saïd Business Schoolの起業家育成プログラム J-STAR Xに選出。</p>
+              <p data-ja="ByteDance（TikTok Shop）にて日本ローンチに参画し、食品カテゴリのセラーアカウントマネジメントを経験。" data-en="Participated in the TikTok Shop Japan launch at ByteDance, with experience in seller account management for the food category.">ByteDance（TikTok Shop）にて日本ローンチに参画し、食品カテゴリのセラーアカウントマネジメントを経験。</p>
+            </div>
+            <div class="founder-awards">
+              <span class="award-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Google Hardware Hackathon</span>
+              <span class="award-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Microsoft Learn Business Contest</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="news">
+  <div class="container">
+    <div class="reveal"><p class="section-label">News</p><h2 class="section-title" data-ja="ニュース" data-en="Latest News">ニュース</h2></div>
+    <div class="news-list reveal">
+      <!-- === NEWS TEMPLATE === コピーして追加。href を記事ページに変更 -->
+      <a class="news-item" href="news/2026-04-22.html">
+        <div class="news-date">2026.04.22</div>
+        <div><span class="news-tag" data-ja="お知らせ" data-en="Notice">お知らせ</span><div class="news-title-text" data-ja="ホームページをリニューアルしました" data-en="Website has been redesigned">ホームページをリニューアルしました</div></div>
+      </a>
+      <a class="news-item" href="news/2026-02-09.html">
+        <div class="news-date">2026.02.09</div>
+        <div><span class="news-tag" data-ja="お知らせ" data-en="Notice">お知らせ</span><div class="news-title-text" data-ja="Cresight Japanを設立しました" data-en="Cresight Japan has been established">Cresight Japanを設立しました</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact" style="background:var(--off-white);">
+  <div class="container">
+    <div class="reveal"><p class="section-label">Contact</p><h2 class="section-title" data-ja="お問い合わせ" data-en="Get in Touch">お問い合わせ</h2><p class="section-desc" data-ja="サービスに関するご質問やご相談など、お気軽にお問い合わせください。" data-en="Feel free to reach out with any questions about our services.">サービスに関するご質問やご相談など、お気軽にお問い合わせください。</p></div>
+    <div class="contact-grid reveal">
+      <div>
+        <div class="contact-info">
+          <h3 data-ja="連絡先" data-en="Contact Information">連絡先</h3>
+          <div class="contact-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>kotone.shiroma@cresightjp.com</span></div>
+          <div class="contact-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-ja="〒150-0041 東京都渋谷区神南1-11-4 FPGリンクス神南 5F" data-en="FPG Links Jinnan 5F, 1-11-4 Jinnan, Shibuya-ku, Tokyo 150-0041">〒150-0041 東京都渋谷区神南1-11-4 FPGリンクス神南 5F</span></div>
+        </div>
+        <div class="recruit-note"><p data-ja="<strong>採用について：</strong>現在、一緒に事業を推進いただける方を募集しています。お問い合わせ種別で「採用・協業」を選択のうえ、お気軽にご連絡ください。" data-en="<strong>Careers:</strong> We are looking for talented individuals to join our team. Please select 'Careers & Partnership' and reach out."><strong>採用について：</strong>現在、一緒に事業を推進いただける方を募集しています。お問い合わせ種別で「採用・協業」を選択のうえ、お気軽にご連絡ください。</p></div>
+      </div>
+      <!-- Formspree: https://formspree.io でフォーム作成 → YOUR_FORM_ID を差し替え -->
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <div class="form-group"><label data-ja="お名前" data-en="Name">お名前</label><input type="text" name="name" required></div>
+          <div class="form-group"><label data-ja="会社名" data-en="Company">会社名</label><input type="text" name="company"></div>
+        </div>
+        <div class="form-group"><label data-ja="メールアドレス" data-en="Email">メールアドレス</label><input type="email" name="email" required></div>
+        <div class="form-group"><label data-ja="お問い合わせ種別" data-en="Inquiry Type">お問い合わせ種別</label>
+          <select name="inquiry_type"><option value="" data-ja="選択してください" data-en="Please select">選択してください</option><option value="service" data-ja="サービスに関するお問い合わせ" data-en="Service Inquiry">サービスに関するお問い合わせ</option><option value="recruit" data-ja="採用・協業" data-en="Careers & Partnership">採用・協業</option><option value="other" data-ja="その他" data-en="Other">その他</option></select>
+        </div>
+        <div class="form-group"><label data-ja="お問い合わせ内容" data-en="Message">お問い合わせ内容</label><textarea name="message" required></textarea></div>
+        <div class="form-status" id="formStatus"></div>
+        <button class="btn btn-primary" type="submit" style="align-self:flex-start;" data-ja="送信する" data-en="Send Message">送信する<span class="btn-arrow">→</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand"><div class="logo-symbol" style="width:28px;height:28px;"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2C18 2 18 14 18 18C14 18 2 18 2 18C2 18 2 12 8 8C12 4 18 2 18 2Z" fill="#6B8A99"/><path d="M22 2C22 2 22 14 22 18C26 18 38 18 38 18C38 18 38 12 32 8C28 4 22 2 22 2Z" fill="#4A3048"/><path d="M18 38C18 38 18 26 18 22C14 22 2 22 2 22C2 22 2 28 8 32C12 36 18 38 18 38Z" fill="#4A3048"/><path d="M22 38C22 38 22 26 22 22C26 22 38 22 38 22C38 22 38 28 32 32C28 36 22 38 22 38Z" fill="#6B8A99"/></svg></div><span class="logo-text">cresight</span></div>
+        <p class="footer-desc" data-ja="世界のイノベーションを日本へ、日本の魅力を世界へ。" data-en="Bringing global innovation to Japan. Taking Japan's best to the world.">世界のイノベーションを日本へ、日本の魅力を世界へ。</p>
+      </div>
+      <div><p class="footer-heading">Navigation</p><ul class="footer-links"><li><a href="#services" data-ja="サービス" data-en="Services">サービス</a></li><li><a href="#about" data-ja="会社概要" data-en="About">会社概要</a></li><li><a href="#news" data-ja="ニュース" data-en="News">ニュース</a></li><li><a href="#contact" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a></li></ul></div>
+      <div><p class="footer-heading" data-ja="連絡先" data-en="Contact">連絡先</p><ul class="footer-links"><li><span style="color:rgba(255,255,255,.5);font-size:.85rem;">kotone.shiroma@cresightjp.com</span></li><li><span style="color:rgba(255,255,255,.5);font-size:.85rem;" data-ja="東京都渋谷区神南1-11-4" data-en="Jinnan 1-11-4, Shibuya-ku">東京都渋谷区神南1-11-4</span></li><li><span style="color:rgba(255,255,255,.5);font-size:.85rem;" data-ja="FPGリンクス神南 5F" data-en="FPG Links Jinnan 5F">FPGリンクス神南 5F</span></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Cresight Japan. All Rights Reserved.</span><button class="lang-toggle" onclick="toggleLang()" style="border-color:rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);" id="langToggleFooter">EN</button></div>
+  </div>
+</footer>
+
+<script>
+let currentLang='ja';
+function toggleLang(){currentLang=currentLang==='ja'?'en':'ja';const t=currentLang==='ja'?'EN':'JA';document.getElementById('langToggle').textContent=t;document.getElementById('langToggleFooter').textContent=t;document.documentElement.lang=currentLang;document.querySelectorAll('[data-ja][data-en]').forEach(el=>{const txt=el.getAttribute('data-'+currentLang);if(el.tagName==='INPUT'||el.tagName==='TEXTAREA')el.placeholder=txt;else if(el.tagName==='OPTION')el.textContent=txt;else el.innerHTML=txt})}
+const header=document.getElementById('header');window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>20));
+function toggleMenu(){document.getElementById('nav').classList.toggle('open');document.getElementById('menuBtn').classList.toggle('active')}
+document.querySelectorAll('#nav a').forEach(l=>l.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('menuBtn').classList.remove('active')}));
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.getElementById('contactForm').addEventListener('submit',async e=>{e.preventDefault();const form=e.target,status=document.getElementById('formStatus'),action=form.getAttribute('action');if(action.includes('YOUR_FORM_ID')){status.className='form-status error';status.textContent=currentLang==='ja'?'フォームの送信先が未設定です。FormspreeのIDを設定してください。':'Form endpoint not configured. Please set up Formspree.';return}try{const res=await fetch(action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});if(res.ok){status.className='form-status success';status.textContent=currentLang==='ja'?'お問い合わせを送信しました。ありがとうございます。':'Your message has been sent. Thank you.';form.reset()}else throw new Error()}catch{status.className='form-status error';status.textContent=currentLang==='ja'?'送信に失敗しました。メールでお問い合わせください。':'Failed to send. Please contact us via email.'}});
+</script>
+</body>
+</html>
