@@ -275,8 +275,8 @@ body{font-family:var(--font-body);color:var(--text);background:var(--white);line
         </div>
         <div class="recruit-note"><p data-ja="<strong>採用について：</strong>現在、一緒に事業を推進いただける方を募集しています。お問い合わせ種別で「採用・協業」を選択のうえ、お気軽にご連絡ください。" data-en="<strong>Careers:</strong> We are looking for talented individuals to join our team. Please select 'Careers & Partnership' and reach out."><strong>採用について：</strong>現在、一緒に事業を推進いただける方を募集しています。お問い合わせ種別で「採用・協業」を選択のうえ、お気軽にご連絡ください。</p></div>
       </div>
-      <!-- Formspree: https://formspree.io でフォーム作成 → YOUR_FORM_ID を差し替え -->
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <!-- Formspree: https://formspree.io でフォーム作成 → YOUR_FORM_ID を差し替え: -->
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/maqvraov" method="POST">
         <div class="form-row">
           <div class="form-group"><label data-ja="お名前" data-en="Name">お名前</label><input type="text" name="name" required></div>
           <div class="form-group"><label data-ja="会社名" data-en="Company">会社名</label><input type="text" name="company"></div>
@@ -314,7 +314,7 @@ const header=document.getElementById('header');window.addEventListener('scroll',
 function toggleMenu(){document.getElementById('nav').classList.toggle('open');document.getElementById('menuBtn').classList.toggle('active')}
 document.querySelectorAll('#nav a').forEach(l=>l.addEventListener('click',()=>{document.getElementById('nav').classList.remove('open');document.getElementById('menuBtn').classList.remove('active')}));
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-document.getElementById('contactForm').addEventListener('submit',async e=>{e.preventDefault();const form=e.target,status=document.getElementById('formStatus'),action=form.getAttribute('action');if(action.includes('YOUR_FORM_ID')){status.className='form-status error';status.textContent=currentLang==='ja'?'フォームの送信先が未設定です。FormspreeのIDを設定してください。':'Form endpoint not configured. Please set up Formspree.';return}try{const res=await fetch(action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});if(res.ok){status.className='form-status success';status.textContent=currentLang==='ja'?'お問い合わせを送信しました。ありがとうございます。':'Your message has been sent. Thank you.';form.reset()}else throw new Error()}catch{status.className='form-status error';status.textContent=currentLang==='ja'?'送信に失敗しました。メールでお問い合わせください。':'Failed to send. Please contact us via email.'}});
+document.getElementById('contactForm').addEventListener('submit',async e=>{e.preventDefault();const form=e.target,status=document.getElementById('formStatus'),action=form.getAttribute('action');if(action.includes('maqvraov')){status.className='form-status error';status.textContent=currentLang==='ja'?'フォームの送信先が未設定です。FormspreeのIDを設定してください。':'Form endpoint not configured. Please set up Formspree.';return}try{const res=await fetch(action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});if(res.ok){status.className='form-status success';status.textContent=currentLang==='ja'?'お問い合わせを送信しました。ありがとうございます。':'Your message has been sent. Thank you.';form.reset()}else throw new Error()}catch{status.className='form-status error';status.textContent=currentLang==='ja'?'送信に失敗しました。メールでお問い合わせください。':'Failed to send. Please contact us via email.'}});
 </script>
 </body>
 </html>
